@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ჩვენს შესახებ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/about.css">
+</head>
+<body class="about-body">
+
+<nav class="navbar about-navbar">
+  <div class="nav-left">
+    <button class="burger-menu" id="burger-btn" aria-label="მენიუ">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+    <a href="shop.html" class="btn-shop">მენიუ</a>
+  </div>
+
+  <div class="nav-menu" id="nav-menu">
+    <ul class="nav-links">
+      <li><a href="shop.html">მენიუ</a></li>
+      <li><a href="about.html" class="active">ჩვენს შესახებ</a></li>
+      <li><a href="careers.html">იმუშავე ჩვენთან</a></li>
+    </ul>
+  </div>
+
+  <div class="logo">
+    <a href="../index.html" class="logo-icon">
+      <span>G</span>
+    </a>
+  </div>
+
+  <div class="nav-right">
+    <div class="lang-select">KA</div>
+    <a href="auth.html" class="icon-link" aria-label="პროფილი">
+      <i class="fa-regular fa-user"></i>
+    </a>
+    <a href="cart.html" class="icon-link cart-icon" aria-label="კალათა">
+      <i class="fa-solid fa-bag-shopping"></i>
+      <span id="cart-count" class="cart-badge">0</span>
+    </a>
+  </div>
+</nav>
+
+
+  <main class="about-section">
+    <div class="about-container">
+      <div class="about-text-content">
+        <h1 class="about-title">A LIVING LEGACY</h1>
+        <p class="about-description">
+            ჰაერში ტრადიცია იგრძნობა. ინტერპრეტაციები იცვლება, რიტუალი კი უცვლელი რჩება. Giacosa 1815 არ გვიყვება „საკვების“ ისტორიას — ის მას ცოცხალ გამოცდილებად აქცევს აქ, სადაც ყველაფერი დაიწყო.
+        </p>
+      </div>
+      <div class="about-image-wrapper">
+        <img src="https://assets.architecturaldigest.in/photos/64f85037ec0bc118bdd98aba/16:9/w_2560%2Cc_limit/Untitled%2520design%2520(14).png" alt="Giacosa Interior" class="about-image">
+      </div>
+    </div>
+  </main>
+
+  <section class="about-time-section">
+    <div class="time-content">
+      <p class="time-subtitle">ნებისმიერი დრო შესაფერისია GIACOSA 1815-ისთვის.</p>
+      <div class="time-display" id="live-clock">11:15 PM</div>
+    </div>
+  </section>
+
+  <script src="../js/about.js"></script>
+  <script src="../js/main.js"></script>
+
+</body>
+</html>

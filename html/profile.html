@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>პირადი კაბინეტი/title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/profile.css">
+</head>
+<body class="shop-body">
+
+  <nav class="navbar shop-navbar">
+    <div class="nav-left">
+      <a href="shop.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> მენიუში დაბრუნება</a>
+    </div>
+
+    <div class="logo">
+      <a href="../index.html" class="logo-icon">
+        <span>G</span>
+      </a>
+    </div>
+
+    <div class="nav-right">
+      <div class="lang-select">KA</div>
+      <a href="profile.html" class="icon-link active" aria-label="პროფილი">
+        <i class="fa-regular fa-user"></i>
+      </a>
+      <a href="cart.html" class="icon-link cart-icon" aria-label="კალათა">
+        <i class="fa-solid fa-bag-shopping"></i>
+        <span id="cart-count" class="cart-badge">0</span>
+      </a>
+    </div>
+  </nav>
+
+  <main class="profile-container">
+    <div class="profile-header">
+      <h1 class="profile-title">პირადი კაბინეტი</h1>
+      <p class="profile-subtitle">მართეთ თქვენი ანგარიში და შეკვეთების ისტორია</p>
+    </div>
+
+    <div class="profile-layout">
+      <aside class="profile-sidebar">
+        <div class="user-card">
+          <div class="user-avatar">
+            <i class="fa-solid fa-user"></i>
+          </div>
+          <h3 id="profile-user-name" class="user-name">ანა ბერიძე</h3>
+          <p id="profile-user-email" class="user-email">ana.beridze@example.com</p>
+        </div>
+
+        <nav class="profile-tabs">
+          <button class="tab-btn active" onclick="switchTab('info')">
+            <i class="fa-regular fa-id-card"></i> პირადი ინფორმაცია
+          </button>
+          <button class="tab-btn" onclick="switchTab('orders')">
+            <i class="fa-solid fa-box-archive"></i> შეკვეთების ისტორია
+          </button>
+          <button class="tab-btn" onclick="switchTab('addresses')">
+            <i class="fa-solid fa-location-dot"></i> შენახული მისამართები
+          </button>
+          <button class="tab-btn logout-btn" onclick="logoutUser()">
+            <i class="fa-solid fa-right-from-bracket"></i> სისტემიდან გამოსვლა
+          </button>
+        </nav>
+      </aside>
+
+      <section class="profile-content">
+        <div id="tab-info" class="tab-content active">
+          <h2 class="content-title">პირადი მონაცემები</h2>
+          <form id="profile-info-form" onsubmit="saveProfileInfo(event)">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="prof-firstname">სახელი</label>
+                <input type="text" id="prof-firstname" value="ანა" required>
+              </div>
+              <div class="form-group">
+                <label for="prof-lastname">გვარი</label>
+                <input type="text" id="prof-lastname" value="ბერიძე" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="prof-email">ელ-ფოსტა</label>
+              <input type="email" id="prof-email" value="ana.beridze@example.com" required>
+            </div>
+
+            <div class="form-group">
+              <label for="prof-phone">ტელეფონის ნომერი</label>
+              <input type="tel" id="prof-phone" value="599 12 34 56" required>
+            </div>
+
+            <button type="submit" class="save-btn">ცვლილებების შენახვა</button>
+          </form>
+        </div>
+
+        <div id="tab-orders" class="tab-content">
+          <h2 class="content-title">ჩემი შეკვეთები</h2>
+          <div id="orders-list" class="orders-list">
+          </div>
+        </div>
+
+        <div id="tab-addresses" class="tab-content">
+          <h2 class="content-title">მისამართები მიწოდებისთვის</h2>
+          <div class="addresses-grid" id="addresses-list">
+          </div>
+          <button class="add-address-btn" onclick="addNewAddress()">
+            <i class="fa-solid fa-plus"></i> ახალი მისამართის დამატება
+          </button>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script src="../js/cart.js"></script>
+  <script src="../js/profile.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>

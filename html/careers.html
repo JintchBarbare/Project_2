@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>იმუშავე ჩვენთან</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/careers.css">
+</head>
+<body class="careers-body">
+
+ 
+  <nav class="navbar shop-navbar careers-navbar">
+    <div class="nav-left">
+      <button class="burger-menu" id="burger-btn" aria-label="მენიუ">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      <a href="shop.html" class="btn-shop">მენიუ</a>
+    </div>
+
+    <div class="nav-menu" id="nav-menu">
+      <ul class="nav-links">
+        <li><a href="shop.html">მენიუ</a></li>
+        <li><a href="about.html">ჩვენს შესახებ</a></li>
+        <li><a href="careers.html" class="active">იმუშავე ჩვენთან</a></li>
+      </ul>
+    </div>
+
+    <div class="logo">
+      <a href="../index.html" class="logo-icon">
+        <span>G</span>
+      </a>
+    </div>
+
+    <div class="nav-right">
+      <div class="lang-select">KA</div>
+      <a href="auth.html" class="icon-link" aria-label="პროფილი">
+        <i class="fa-regular fa-user"></i>
+      </a>
+      <a href="cart.html" class="icon-link cart-icon" aria-label="კალათა">
+        <i class="fa-solid fa-bag-shopping"></i>
+        <span id="cart-count" class="cart-badge">0</span>
+      </a>
+    </div>
+  </nav>
+
+  <main class="careers-section">
+    <div class="careers-container">
+      <div class="careers-image-wrapper">
+        <img src="https://images.stockcake.com/public/6/8/5/685496d1-b88d-4c4b-9fa9-923db25ab465_large/diverse-culinary-team-stockcake.jpg" alt="Join Our Team" class="careers-image">
+      </div>
+      <div class="careers-text-content">
+        <h1 class="careers-title">JOIN OUR<br>TEAM</h1>
+        <p class="careers-description">
+          მზად ხართ, გახდეთ ჩვენი ისტორიის ნაწილი და თავად განსაზღვროთ თქვენი მომავალი? Giacosa მუდმივად ვითარდება; ჩვენ ვეძებთ ენთუზიაზმით სავსე, დინამიკურ ადამიანებს, რომლებიც შემოუერთდებიან ჩვენს გუნდს და სტუმრებს დაუვიწყარ შთაბეჭდილებებს აჩუქებენ!
+        </p>
+        <div class="careers-contact-info">
+          <p>განაცხადის შესატანად, გამოგვიგზავნეთ ელ.წერილი შემდეგ მისამართზე:</p>
+          <a href="mailto:hr@valenza-group.com" class="careers-email">hr@valenza-group.com</a>
+          <p>ან შეავსეთ ქვემოთ მოცემული ფორმა.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <section class="careers-form-section">
+    <form class="application-form" id="careers-form" onsubmit="event.preventDefault(); alert('თქვენი განაცხადი მიღებულია!');">
+      
+      <div class="form-group full-width">
+        <label for="position">position <span class="req">*</span></label>
+        <select id="position" required>
+          <option value="" disabled selected>- select -</option>
+          <option value="bartender">Bartender</option>
+          <option value="waiter">Waiter / Waitress</option>
+          <option value="host">Host / Hostess</option>
+          <option value="barista">Barista</option>
+          <option value="kitchen">Kitchen Staff</option>
+        </select>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="first-name">first name <span class="req">*</span></label>
+          <input type="text" id="first-name" required>
+        </div>
+        <div class="form-group">
+          <label for="last-name">last name <span class="req">*</span></label>
+          <input type="text" id="last-name" required>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="phone">phone <span class="req">*</span></label>
+          <input type="tel" id="phone" required>
+        </div>
+        <div class="form-group">
+          <label for="email">email <span class="req">*</span></label>
+          <input type="email" id="email" required>
+        </div>
+      </div>
+
+      <div class="form-group full-width">
+        <label for="cv-file">attach CV</label>
+        <div class="file-upload-wrapper">
+          <input type="file" id="cv-file" accept=".pdf,.doc,.docx">
+        </div>
+      </div>
+
+      <div class="form-group full-width">
+        <label for="message">message <span class="req">*</span></label>
+        <textarea id="message" rows="4" required></textarea>
+      </div>
+
+      <div class="form-checkbox-group">
+        <input type="checkbox" id="privacy" required>
+        <label for="privacy">
+          I have read the <a href="#" class="form-link">privacy policy</a> and I authorise the holder to process my data in the manner indicated <span class="req">*</span>
+        </label>
+      </div>
+
+      <div class="form-submit-wrapper">
+        <button type="submit" class="btn-send-request">SEND REQUEST</button>
+      </div>
+
+      <p class="captcha-info">
+        This module is protected by MTCaptcha,<br>
+        whose <a href="#" class="form-link">Privacy Policy</a> and <a href="#" class="form-link">Terms of Service</a> apply.
+      </p>
+
+    </form>
+  </section>
+
+  <div id="auth-modal" class="auth-modal-overlay">
+    <div class="auth-modal-container">
+      <button id="auth-close-btn" class="auth-close-btn" aria-label="დახურვა">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="auth-logo">
+        <div class="auth-logo-icon">G</div>
+      </div>
+
+      <div id="login-view">
+        <div class="auth-section">
+          <h2 class="auth-title">LOGIN</h2>
+          <p class="auth-description">
+            Please enter your account details to log into your personal area
+          </p>
+
+          <form id="login-form" class="auth-form" onsubmit="handleLogin(event)">
+            <div class="auth-input-grid">
+              <div class="auth-field">
+                <label for="login-email">email <span class="required">*</span></label>
+                <input type="email" id="login-email" required>
+              </div>
+              <div class="auth-field">
+                <label for="login-password">Password <span class="required">*</span></label>
+                <input type="password" id="login-password" required>
+              </div>
+            </div>
+
+            <p id="login-error" class="auth-error-msg"></p>
+
+            <button type="submit" class="auth-btn-dark">SEND</button>
+            <a href="#" class="forgot-password-link">Forgotten password ?</a>
+          </form>
+        </div>
+
+        <div class="auth-divider"></div>
+
+        <div class="auth-section">
+          <h2 class="auth-subtitle">NEW USER</h2>
+          <p class="auth-description">
+            Get faster checkouts, access to your order history and create a wishlist.
+          </p>
+          <button type="button" class="auth-btn-dark" onclick="showRegisterView()">REGISTER</button>
+        </div>
+      </div>
+
+      <div id="register-view" style="display: none;">
+        <div class="auth-section">
+          <h2 class="auth-title">CREATE ACCOUNT</h2>
+          <p class="auth-description">
+            Fill in your details to create a new profile
+          </p>
+
+          <form id="register-form" class="auth-form" onsubmit="handleRegister(event)">
+            <div class="auth-input-grid">
+              <div class="auth-field">
+                <label for="reg-firstname">First Name <span class="required">*</span></label>
+                <input type="text" id="reg-firstname" required>
+              </div>
+              <div class="auth-field">
+                <label for="reg-lastname">Last Name <span class="required">*</span></label>
+                <input type="text" id="reg-lastname" required>
+              </div>
+            </div>
+
+            <div class="auth-input-grid">
+              <div class="auth-field">
+                <label for="reg-email">email <span class="required">*</span></label>
+                <input type="email" id="reg-email" required>
+              </div>
+              <div class="auth-field">
+                <label for="reg-password">Password <span class="required">*</span></label>
+                <input type="password" id="reg-password" minlength="6" required>
+              </div>
+            </div>
+
+            <p id="register-error" class="auth-error-msg"></p>
+
+            <button type="submit" class="auth-btn-dark">CREATE PROFILE</button>
+          </form>
+
+          <button type="button" class="back-to-login-btn" onclick="showLoginView()">
+            <i class="fa-solid fa-arrow-left"></i> Back to Login
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="../js/cart.js"></script>
+  <script src="../js/script.js"></script>
+  <script src="../js/main.js"></script>
+    <script src="../js/careers.js"></script>
+</body>
+</html>

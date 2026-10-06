@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>კალათა</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/cart.css">
+</head>
+<body class="shop-body">
+
+  <nav class="navbar shop-navbar">
+    <div class="nav-left">
+      <a href="shop.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> მენიუში დაბრუნება</a>
+    </div>
+
+    <div class="logo">
+      <a href="../index.html" class="logo-icon">
+        <span>G</span>
+      </a>
+    </div>
+
+    <div class="nav-right">
+      <div class="lang-select">KA</div>
+      <a href="cart.html" class="icon-link cart-icon" aria-label="კალათა">
+        <i class="fa-solid fa-bag-shopping"></i>
+        <span id="cart-count" class="cart-badge">0</span>
+      </a>
+    </div>
+  </nav>
+
+  <main class="cart-page-container">
+    <div class="cart-header-section">
+      <h1 class="cart-title">ჩემი კალათა</h1>
+      <button id="clear-cart-btn" class="clear-cart-btn" onclick="clearCart()">
+        <i class="fa-regular fa-trash-can"></i> კალათის გასუფთავება
+      </button>
+    </div>
+
+    <div class="cart-layout">
+      <div id="cart-items-container" class="cart-items-list">
+        <p class="loading">იტვირთება...</p>
+      </div>
+
+      <aside class="cart-summary-card">
+        <h2 class="summary-title">შეკვეთის დეტალები</h2>
+        
+        <div class="summary-row">
+          <span>პროდუქტების ჯამი</span>
+          <span><span id="cart-subtotal-price">0.00</span> ₾</span>
+        </div>
+
+        <div class="summary-row">
+          <span>მიწოდება</span>
+          <span class="free-shipping">უფასო</span>
+        </div>
+
+        <div class="summary-divider"></div>
+
+        <div class="summary-row total-row">
+          <span>სულ ჯამი</span>
+          <span class="grand-total"><span id="cart-total-price">0.00</span> ₾</span>
+        </div>
+
+        <button class="checkout-btn" onclick="handleCheckout()">
+          შეკვეთის გაფორმება <i class="fa-solid fa-arrow-right"></i>
+        </button>
+
+        <a href="shop.html" class="continue-shopping">
+          <i class="fa-solid fa-plus"></i> სხვა კერძების დამატება
+        </a>
+      </aside>
+    </div>
+
+  <div id="checkout-modal" class="modal-overlay">
+    <div class="modal-card">
+      <button class="modal-close-btn" onclick="closeCheckoutModal()" aria-label="დახურვა">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="modal-header">
+        <h2>შეკვეთის გაფორმება</h2>
+        <p>გთხოვთ შეავსოთ საკონტაქტო მონაცემები მიწოდებისთვის</p>
+      </div>
+
+      <form id="checkout-form" onsubmit="submitOrder(event)">
+        <div class="form-group">
+          <label for="user-name">სახელი და გვარი *</label>
+          <input type="text" id="user-name" required placeholder="მაგ: გიორგი ბერიძე">
+        </div>
+
+        <div class="form-group">
+          <label for="user-phone">ტელეფონის ნომერი *</label>
+          <input type="tel" id="user-phone" required placeholder="5XX XX XX XX">
+        </div>
+
+        <div class="form-group">
+          <label for="user-address">მისამართი *</label>
+          <input type="text" id="user-address" required placeholder="ქუჩა, ბინის/სახლის ნომერი">
+        </div>
+
+        <div class="form-group">
+          <label for="user-notes">კომენტარი (არასავალდებულო)</label>
+          <textarea id="user-notes" rows="3" placeholder="დამატებითი ინსტრუქცია კურიერისთვის..."></textarea>
+        </div>
+
+        <div class="modal-summary">
+          <span>გადასახდელი თანხა:</span>
+          <strong id="modal-total-price">0.00 ₾</strong>
+        </div>
+
+        <button type="submit" class="checkout-submit-btn">
+          შეკვეთის დადასტურება <i class="fa-solid fa-check"></i>
+        </button>
+      </form>
+    </div>
+  </div>
+  
+  </main>
+
+  <script src="../js/cart.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>

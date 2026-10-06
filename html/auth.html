@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ავტორიზაცია / რეგისტრაცია</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/auth.css">
+</head>
+<body class="auth-page-body">
+
+  <nav class="navbar">
+    <div class="nav-left">
+      <button class="burger-menu" id="burger-btn" aria-label="მენიუ">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      <a href="shop.html" class="btn-shop">მენიუ</a>
+    </div>
+
+    <div class="nav-menu" id="nav-menu">
+      <ul class="nav-links">
+        <li><a href="shop.html">მენიუ</a></li>
+        <li><a href="about.html">ჩვენს შესახებ</a></li>
+        <li><a href="careers.html">იმუშავე ჩვენთან</a></li>
+      </ul>
+    </div>
+
+    <div class="logo">
+      <a href="../index.html" class="logo-icon">
+        <span>G</span>
+      </a>
+    </div>
+
+    <div class="nav-right">
+      <div class="lang-select">KA</div>
+      <a href="auth.html" class="icon-link" aria-label="პროფილი"><i class="fa-regular fa-user"></i></a>
+      <a href="cart.html" class="icon-link cart-icon" aria-label="კალათა">
+        <i class="fa-solid fa-bag-shopping"></i>
+        <span id="cart-count" class="cart-badge">0</span>
+      </a>
+    </div>
+  </nav>
+
+  <main class="auth-container-page">
+    <div class="auth-modal-container static-auth-container">
+      
+      <div class="auth-logo">
+        <a href="../index.html" class="auth-logo-icon">G</a>
+      </div>
+
+      <!-- LOGIN VIEW -->
+      <div id="login-view">
+        <div class="auth-section">
+          <h2 class="auth-title">ავტორიზაცია</h2>
+          <p class="auth-description">
+            გთხოვთ შეიყვანოთ თქვენი მონაცემები პირად კაბინეტში შესასვლელად
+          </p>
+
+          <form id="login-form" class="auth-form" onsubmit="handleLogin(event)">
+            <div class="auth-input-grid">
+              <div class="auth-field">
+                <label for="login-email">ელ. ფოსტა <span class="required">*</span></label>
+                <input type="email" id="login-email" required>
+              </div>
+              <div class="auth-field">
+                <label for="login-password">პაროლი <span class="required">*</span></label>
+                <input type="password" id="login-password" required>
+              </div>
+            </div>
+
+            <p id="login-error" class="auth-error-msg"></p>
+
+            <button type="submit" class="auth-btn-dark">გაგზავნა</button>
+            <a href="#" class="forgot-password-link">დაგავიწყდათ პაროლი?</a>
+          </form>
+        </div>
+
+        <div class="auth-divider"></div>
+
+        <div class="auth-section">
+          <h2 class="auth-subtitle">ახალი მომხმარებელი</h2>
+          <p class="auth-description">
+            დარეგისტრირდით შეკვეთის უფრო სწრაფად გაფორმებისთვის, შეკვეთების ისტორიისა და სურვილების სიის სანახავად.
+          </p>
+          <button type="button" class="auth-btn-dark" onclick="showRegisterView()">რეგისტრაცია</button>
+        </div>
+      </div>
+
+      <div id="register-view" style="display: none;">
+        <div class="auth-section">
+          <h2 class="auth-title">ანგარიშის შექმნა</h2>
+          <p class="auth-description">
+            შეავსეთ მონაცემები ახალი პროფილის შესაქმნელად
+          </p>
+
+          <form id="register-form" class="auth-form" onsubmit="handleRegister(event)">
+            <div class="auth-input-grid">
+              <div class="auth-field">
+                <label for="reg-firstname">სახელი <span class="required">*</span></label>
+                <input type="text" id="reg-firstname" required>
+              </div>
+              <div class="auth-field">
+                <label for="reg-lastname">გვარი <span class="required">*</span></label>
+                <input type="text" id="reg-lastname" required>
+              </div>
+            </div>
+
+            <div class="auth-input-grid">
+              <div class="auth-field">
+                <label for="reg-email">ელ. ფოსტა <span class="required">*</span></label>
+                <input type="email" id="reg-email" required>
+              </div>
+              <div class="auth-field">
+                <label for="reg-password">პაროლი <span class="required">*</span></label>
+                <input type="password" id="reg-password" minlength="6" required>
+              </div>
+            </div>
+
+            <p id="register-error" class="auth-error-msg"></p>
+
+            <button type="submit" class="auth-btn-dark">პროფილის შექმნა</button>
+          </form>
+
+          <button type="button" class="back-to-login-btn" onclick="showLoginView()">
+            <i class="fa-solid fa-arrow-left"></i> უკან შესვლაზე
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+<script src="../js/cart.js"></script>
+<script src="../js/script.js"></script>
+<script src="../js/auth.js"></script>
+<script src="../js/main.js"></script>
+</body>
+</html>

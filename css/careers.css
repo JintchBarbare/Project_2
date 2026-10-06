@@ -1,0 +1,392 @@
+body.careers-body {
+  background-color: #1c2d30; 
+  color: #ffffff;
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.careers-navbar {
+  background-color: transparent;
+  padding: 25px 40px;
+}
+
+.careers-navbar .btn-shop {
+  border-color: #cdb096;
+  color: #ffffff;
+}
+
+.careers-navbar .lang-select,
+.careers-navbar .icon-link,
+.careers-navbar .burger-menu {
+  color: #ffffff;
+}
+
+.careers-navbar .logo-icon {
+  border-color: #cdb096;
+  color: #cdb096;
+}
+
+.careers-navbar .logo-icon span {
+  color: #cdb096;
+}
+
+.careers-section {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 60px 80px 60px;
+}
+
+.careers-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  max-width: 1300px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.careers-image-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.careers-image {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  object-fit: cover;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.careers-text-content {
+  padding-left: 20px;
+}
+
+.careers-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 64px;
+  font-weight: 400;
+  letter-spacing: 4px;
+  color: #cdb096; 
+  line-height: 1.05;
+  text-transform: uppercase;
+  margin-bottom: 35px;
+}
+
+.careers-description {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  line-height: 1.8;
+  color: #e0e0e0;
+  font-weight: 300;
+  max-width: 480px;
+  margin-bottom: 30px;
+}
+
+.careers-contact-info {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  line-height: 1.8;
+  color: #e0e0e0;
+  font-weight: 300;
+}
+
+.careers-contact-info p {
+  margin: 4px 0;
+}
+
+.careers-email {
+  color: #cdb096;
+  text-decoration: underline;
+  font-weight: 400;
+  transition: opacity 0.3s;
+}
+
+.careers-email:hover {
+  opacity: 0.8;
+}
+
+
+.careers-form-section {
+  background-color: #3b5a61; 
+  width: 100%;
+  padding: 80px 20px 100px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.application-form {
+  max-width: 800px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.form-group.full-width {
+  width: 100%;
+}
+
+.form-group label {
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  color: #ffffff;
+  margin-bottom: 8px;
+  font-weight: 300;
+}
+
+.form-group label .req {
+  color: #e74c3c;
+  margin-left: 2px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group select,
+.form-group textarea {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+  color: #ffffff;
+  padding: 8px 0;
+  font-size: 14px;
+  font-family: 'Montserrat', sans-serif;
+  outline: none;
+  border-radius: 0;
+  transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-bottom-color: #cdb096;
+}
+
+.form-group select {
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%20%23ffffff' d='M1.41 0L6 4.58 10.59 0 12 1.41l-6 6-6-6z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 5px center;
+  cursor: pointer;
+}
+
+.form-group select option {
+  background-color: #3b5a61;
+  color: #ffffff;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.file-upload-wrapper input[type="file"] {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+  padding: 8px 0;
+  width: 100%;
+  color: #cccccc;
+  cursor: pointer;
+}
+
+.file-upload-wrapper input[type="file"]::-webkit-file-upload-button {
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  color: #ffffff;
+  padding: 6px 16px;
+  margin-right: 15px;
+  cursor: pointer;
+  border-radius: 2px;
+  font-size: 12px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.form-checkbox-group {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.form-checkbox-group input[type="checkbox"] {
+  accent-color: #cdb096;
+  width: 16px;
+  height: 16px;
+  margin-top: 2px;
+  cursor: pointer;
+}
+
+.form-checkbox-group label {
+  font-size: 12px;
+  color: #e0e0e0;
+  line-height: 1.5;
+  font-weight: 300;
+}
+
+.form-checkbox-group label .req {
+  color: #e74c3c;
+}
+
+.form-link {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.form-submit-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.btn-send-request {
+  background-color: #cdb096;
+  color: #ffffff;
+  border: none;
+  padding: 14px 45px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+}
+
+.btn-send-request:hover {
+  background-color: #b8987e;
+  transform: translateY(-2px);
+}
+
+.captcha-info {
+  text-align: center;
+  font-size: 11px;
+  color: #b0c2c5;
+  line-height: 1.6;
+  margin-top: 10px;
+}
+
+
+@media screen and (max-width: 1024px) {
+  .careers-section {
+    padding: 40px 30px 60px 30px;
+  }
+
+  .careers-container {
+    gap: 40px;
+  }
+
+  .careers-title {
+    font-size: 48px;
+  }
+
+  .form-row {
+    gap: 25px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .careers-navbar {
+    padding: 15px 20px;
+  }
+
+  .careers-section {
+    padding: 30px 20px 50px 20px;
+  }
+
+  .careers-container {
+    grid-template-columns: 1fr;
+    gap: 35px;
+    text-align: center;
+  }
+
+  .careers-text-content {
+    padding-left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .careers-title {
+    font-size: 38px;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+  }
+
+  .careers-description {
+    max-width: 100%;
+    margin-bottom: 25px;
+  }
+
+  .careers-image {
+    max-width: 100%;
+    max-height: 400px;
+  }
+
+  .careers-form-section {
+    padding: 50px 20px 60px 20px;
+  }
+
+  .application-form {
+    gap: 25px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .careers-title {
+    font-size: 30px;
+    letter-spacing: 1.5px;
+  }
+
+  .careers-description,
+  .careers-contact-info {
+    font-size: 13px;
+  }
+
+  .form-group label {
+    font-size: 12px;
+  }
+
+  .form-group input[type="text"],
+  .form-group input[type="email"],
+  .form-group input[type="tel"],
+  .form-group select,
+  .form-group textarea {
+    font-size: 15px; 
+  }
+
+  .file-upload-wrapper input[type="file"]::-webkit-file-upload-button {
+    padding: 6px 12px;
+    margin-right: 8px;
+  }
+
+  .btn-send-request {
+    width: 100%; 
+    padding: 14px 20px;
+  }
+}
