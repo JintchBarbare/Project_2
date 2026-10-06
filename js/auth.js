@@ -3,14 +3,14 @@ function handleProfileNavigation(event) {
   
   const loggedInUser = localStorage.getItem('logged_in_user');
   if (loggedInUser) {
-    window.location.href = 'profile.html';
+    window.location.href = './profile.html';
   } else {
-    window.location.href = 'auth.html';
+    window.location.href = './auth.html';
   }
 }
 
 function handleRegister(event) {
-  event.preventDefault();
+  if (event) event.preventDefault();
 
   const firstName = document.getElementById('reg-firstname')?.value.trim();
   const lastName = document.getElementById('reg-lastname')?.value.trim();
@@ -18,6 +18,8 @@ function handleRegister(event) {
   const password = document.getElementById('reg-password')?.value;
   const phone = document.getElementById('reg-phone')?.value.trim() || '';
   const errorElement = document.getElementById('register-error');
+
+  if (errorElement) errorElement.textContent = '';
 
   if (!firstName || !lastName || !email || !password) {
     if (errorElement) errorElement.textContent = 'გთხოვთ შეავსოთ ყველა აუცილებელი ველი!';
@@ -31,25 +33,22 @@ function handleRegister(event) {
     return;
   }
 
-
   const newUser = { firstName, lastName, email, password, phone };
   users.push(newUser);
   localStorage.setItem('registered_users', JSON.stringify(users));
 
-  alert('რეგისტრაცია წარმატებით დასრულდა! ახლა გაიარეთ ავტორიზაცია.');
-  showLoginView();
-
-  const loginEmailInput = document.getElementById('login-email');
-  if (loginEmailInput) loginEmailInput.value = email;
+  localStorage.setItem('logged_in_user', JSON.stringify(newUser));
+  window.location.href = './profile.html';
 }
 
-
 function handleLogin(event) {
-  event.preventDefault();
+  if (event) event.preventDefault();
 
   const email = document.getElementById('login-email')?.value.trim().toLowerCase();
   const password = document.getElementById('login-password')?.value;
   const errorElement = document.getElementById('login-error');
+
+  if (errorElement) errorElement.textContent = '';
 
   if (!email || !password) {
     if (errorElement) errorElement.textContent = 'გთხოვთ შეიყვანოთ ელფოსტა და პაროლი!';
@@ -66,10 +65,8 @@ function handleLogin(event) {
   }
 
   localStorage.setItem('logged_in_user', JSON.stringify(foundUser));
-
-  window.location.href = 'profile.html';
+  window.location.href = './profile.html';
 }
-
 
 function showRegisterView(isBack = false) {
   const loginView = document.getElementById('login-view');
@@ -103,12 +100,11 @@ window.addEventListener('popstate', (e) => {
   }
 });
 
-
-
 document.addEventListener('DOMContentLoaded', () => {
   const loggedInUser = localStorage.getItem('logged_in_user');
+  
   if (loggedInUser && window.location.pathname.includes('auth.html')) {
-    window.location.href = 'profile.html';
+    window.location.href = './profile.html';
     return;
   }
 
@@ -117,29 +113,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (loginForm) loginForm.addEventListener('submit', handleLogin);
   if (registerForm) registerForm.addEventListener('submit', handleRegister);
-
-  const burgerBtn = document.getElementById('burger-btn');
-  const navMenu = document.getElementById('nav-menu');
-
-  if (burgerBtn && navMenu) {
-    burgerBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      burgerBtn.classList.toggle('active');
-      navMenu.classList.toggle('active');
-    });
-
-    document.addEventListener('click', (e) => {
-      if (!navMenu.contains(e.target) && !burgerBtn.contains(e.target)) {
-        burgerBtn.classList.remove('active');
-        navMenu.classList.remove('active');
-      }
-    });
-
-    navMenu.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        burgerBtn.classList.remove('active');
-        navMenu.classList.remove('active');
-      });
-    });
-  }
 });
